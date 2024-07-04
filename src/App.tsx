@@ -1,5 +1,5 @@
 import styles from "./App.module.scss";
-import PasswordInput from "Component/PasswordInput/PasswordInput";
+import PasswordInput from "Component/PasswordInput";
 
 const App = () => {
   return (

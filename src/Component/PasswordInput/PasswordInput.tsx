@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -19,25 +19,41 @@ const PasswordInput = () => {
       password: Yup.string().test("password strength", "", (value) => {
         let errors: string[] = [];
 
-        if (!/[A-Z]/.test(value || ""))
-          errors.push(types.PasswordValidation.Uppercase);
-        if (!/[a-z]/.test(value || ""))
-          errors.push(types.PasswordValidation.Lowercase);
-        if (!/[0-9]/.test(value || ""))
-          errors.push(types.PasswordValidation.Number);
-        if (!/[!@#$%^&*(),.?":{}|<>]/.test(value || ""))
-          errors.push(types.PasswordValidation.SpecialChar);
-        if (!/.{8,}/.test(value || ""))
+        const pwd = value || "";
+
+        if (!pwd || pwd.length < 8) {
           errors.push(types.PasswordValidation.MinLength);
+        }
+
+        if (!/[A-Z]/.test(pwd)) {
+          errors.push(types.PasswordValidation.Uppercase);
+        }
+
+        if (!/[a-z]/.test(pwd)) {
+          errors.push(types.PasswordValidation.Lowercase);
+        }
+
+        if (!/[0-9]/.test(pwd)) {
+          errors.push(types.PasswordValidation.Number);
+        }
+
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(pwd)) {
+          errors.push(types.PasswordValidation.SpecialChar);
+        }
 
         if (errors.length > 0) {
           return new Yup.ValidationError(errors.join(", "), null, "password");
         }
+
         return true;
       }),
     }),
     onSubmit: (values) => console.log("passwordInput", values),
   });
+
+  useEffect(() => {
+    formik.validateForm();
+  }, []);
 
   const validationKeys = [
     types.PasswordValidation.Uppercase,
