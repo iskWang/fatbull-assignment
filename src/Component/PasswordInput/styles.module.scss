@@ -1,0 +1,49 @@
+.container {
+  @apply relative;
+
+  legend {
+    @apply absolute 
+    top-[calc(-18px/2)]
+    left-[16px] 
+    leading-[18px]
+    px-[4px]
+    bg-black
+    text-white 
+    text-[12px];
+  }
+
+  input {
+    @apply w-[335px] 
+    h-[58px] 
+    rounded-[8px]
+    px-[12px]
+    bg-transparent
+    border-[3px]
+    border-[#ffffff80]
+    text-white
+    focus:outline-none
+    hover:border-white
+    focus:border-[#00A3FF];
+  }
+
+  .errorList {
+    @apply absolute
+    mt-[20px] 
+    px-[12px] 
+    py-[8px]
+    rounded-[8px]
+    bg-[#242424];
+  }
+
+  .errorItem {
+    @apply w-[100%] 
+      py-[8px]
+      inline-flex
+      text-[14px] 
+      text-white;
+
+    .icon {
+      @apply mr-[8px];
+    }
+  }
+}
