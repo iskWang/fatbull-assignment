@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import cx from "classnames";
 import { format } from "date-fns";
 import DatePicker from "react-datepicker";
@@ -9,11 +9,9 @@ import Header from "./Header";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./styles.module.scss";
 
-import * as types from "./types";
-
 const DATE_FORMAT = "MM/dd/yyyy";
 
-const CustomDatePicker = (props: types.DatePickerProps) => {
+const CustomDatePicker = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   const [tempDate, setTempDate] = useState<Date | null>();
