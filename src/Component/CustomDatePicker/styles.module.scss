@@ -1,62 +1,68 @@
-.wrapper {
-  // reset background and border
+.pickerWrapper {
+  @apply invisible absolute;
+
+  &.display {
+    @apply visible;
+  }
+
+  // reset original datepicker styles
   :global(.react-datepicker) {
     @apply w-[320px] border-none bg-[#1B1B1B] text-white;
     font-family: "Inter", sans-serif;
     box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.3);
-  }
 
-  :global(.react-datepicker__month-container) {
-    @apply w-[100%];
-  }
+    :global(.react-datepicker__month-container) {
+      @apply w-[100%];
+    }
 
-  :global(.react-datepicker__children-container) {
-    @apply w-[100%] mt-[3px];
-  }
+    :global(.react-datepicker__children-container) {
+      @apply w-[100%] mt-[3px];
+    }
 
-  :global(.react-datepicker__month) {
-    @apply m-0;
-  }
+    :global(.react-datepicker__month) {
+      @apply m-0;
+    }
 
-  :global(.react-datepicker__year) {
-    @apply m-0;
-  }
+    :global(.react-datepicker__year) {
+      @apply m-0;
+    }
 
-  :global(.react-datepicker__year-wrapper) {
-    @apply max-w-[100%] my-0 ml-[24px] mr-[25px];
-  }
+    :global(.react-datepicker__year-wrapper) {
+      @apply max-w-[100%] my-0 ml-[24px] mr-[25px];
+    }
 
-  :global(.react-datepicker__year-text) {
-    @apply flex items-center justify-center w-[61px] h-[24px] mb-[24px];
-  }
+    :global(.react-datepicker__year-text) {
+      @apply flex items-center justify-center w-[61px] h-[24px] mb-[24px];
+    }
 
-  :global(.react-datepicker__header) {
-    @apply mt-[9px]
-    mb-[11px]
-    mx-[12px] 
-    bg-transparent
-    border-b-0;
-  }
+    :global(.react-datepicker__header) {
+      @apply mt-[9px]
+      mb-[11px]
+      mx-[12px] 
+      bg-transparent
+      border-b-0;
+    }
 
-  :global(.react-datepicker__day-name),
-  :global(.react-datepicker__day) {
-    @apply w-[36px] 
-      text-[#fff] 
-      mx-[3px]
-      first-of-type:ml-0
-      last-of-type:mr-0
-      bg-transparent;
-  }
+    :global(.react-datepicker__day-name),
+    :global(.react-datepicker__day) {
+      @apply w-[36px] 
+        text-[#fff] 
+        mx-[3px]
+        first-of-type:ml-0
+        last-of-type:mr-0
+        bg-transparent;
+    }
 
-  :global(.react-datepicker__day-name) {
-    @apply leading-[13px] text-[11px];
-  }
+    :global(.react-datepicker__day-name) {
+      @apply leading-[13px] text-[11px];
+    }
 
-  :global(.react-datepicker__day) {
-    @apply w-[36px] h-[36px] text-[14px];
+    :global(.react-datepicker__day) {
+      @apply w-[36px] h-[36px] text-[14px];
 
-    &:global(.react-datepicker__day--selected) {
-      @apply rounded-[50%];
+      &:global(.react-datepicker__day--selected) {
+        @apply rounded-[50%];
+      }
     }
   }
 

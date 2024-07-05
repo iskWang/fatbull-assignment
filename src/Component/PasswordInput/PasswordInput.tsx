@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import Input from "Component/Input";
 import checkIcon from "Asset/check.svg";
 import uncheckIcon from "Asset/uncheck.svg";
 
@@ -65,18 +66,15 @@ const PasswordInput = () => {
 
   return (
     <div className={styles.container}>
-      <div>
-        <legend>Password</legend>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-      </div>
+      <Input
+        type="password"
+        placeholder="Password"
+        name="password"
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      />
       {isFocused && (
         <div className={styles.errorList}>
           {validationKeys.map((validation) => {
