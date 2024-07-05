@@ -10,7 +10,7 @@ import styles from "./styles.module.scss";
 import * as types from "./types";
 
 const PasswordInput = () => {
-  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused, setIsFocused] = useState(true);
 
   const formik = useFormik({
     initialValues: {
@@ -73,7 +73,7 @@ const PasswordInput = () => {
         value={formik.values.password}
         onChange={formik.handleChange}
         onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
+        // onBlur={() => setIsFocused(false)}
       />
       {isFocused && (
         <div className={styles.errorList}>
@@ -86,7 +86,7 @@ const PasswordInput = () => {
                   className={styles.icon}
                   src={isError ? uncheckIcon : checkIcon}
                 />
-                {validation}
+                <p>{validation}</p>
               </div>
             );
           })}

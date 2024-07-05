@@ -99,7 +99,7 @@ const CustomDatePicker = () => {
           yearItemNumber={20}
           dateFormat={DATE_FORMAT}
         >
-          <div className="w-[100%] px-[12px] inline-flex justify-end">
+          <div className="w-[100%] inline-flex justify-end">
             <div
               className="cursor-pointer px-[16px] py-[8px]"
               onClick={handleOnCancel}

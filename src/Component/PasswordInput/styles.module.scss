@@ -33,17 +33,24 @@
     py-[8px]
     rounded-[8px]
     bg-[#242424];
+
+    font-family: "Ubuntu", sans-serif;
   }
 
   .errorItem {
     @apply w-[100%] 
-      py-[8px]
+      py-[9px]
       inline-flex
       text-[14px] 
-      text-white;
+      text-white
+      first-of-type:pb-0;
 
     .icon {
-      @apply mr-[8px];
+      @apply mr-[10px];
+    }
+
+    p {
+      @apply w-[225px];
     }
   }
 }

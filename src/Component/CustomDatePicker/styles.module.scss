@@ -15,8 +15,12 @@
       @apply w-[100%];
     }
 
+    :global(.react-datepicker__month-container) {
+      @apply float-none;
+    }
+
     :global(.react-datepicker__children-container) {
-      @apply w-[100%] mt-[3px];
+      @apply w-[100%] m-0 p-0 pr-[27px] mt-[12px] mb-[16px];
     }
 
     :global(.react-datepicker__month) {
@@ -24,15 +28,19 @@
     }
 
     :global(.react-datepicker__year) {
-      @apply m-0;
+      @apply m-0 mt-[-11px];
     }
 
     :global(.react-datepicker__year-wrapper) {
-      @apply max-w-[100%] my-0 ml-[24px] mr-[25px];
+      @apply max-w-[100%] my-0 ml-[24px] mr-[25px] justify-between;
     }
 
     :global(.react-datepicker__year-text) {
-      @apply flex items-center justify-center w-[61px] h-[24px] mb-[24px];
+      @apply flex items-center justify-center w-[61px] h-[24px] m-0 mb-[24px];
+
+      &:hover {
+        @apply text-black;
+      }
     }
 
     :global(.react-datepicker__header) {
@@ -50,7 +58,8 @@
         mx-[3px]
         first-of-type:ml-0
         last-of-type:mr-0
-        bg-transparent;
+        bg-transparent
+        m-0;
     }
 
     :global(.react-datepicker__day-name) {
