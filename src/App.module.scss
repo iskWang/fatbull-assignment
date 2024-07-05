@@ -1,7 +1,20 @@
 .container {
   @apply flex
+    flex-col
     min-h-[100vh] 
     justify-center
     items-center 
     bg-black;
+}
+
+.wrap {
+  @apply flex 
+    flex-col
+    h-[100vh]
+    justify-center
+    items-center;
+
+  h2 {
+    @apply text-white mb-[10px];
+  }
 }

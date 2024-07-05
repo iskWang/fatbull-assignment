@@ -1,0 +1,114 @@
+.wrapper {
+  // reset background and border
+  :global(.react-datepicker) {
+    @apply w-[320px] border-none bg-[#1B1B1B] text-white;
+    font-family: "Inter", sans-serif;
+    box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  :global(.react-datepicker__month-container) {
+    @apply w-[100%];
+  }
+
+  :global(.react-datepicker__children-container) {
+    @apply w-[100%] mt-[3px];
+  }
+
+  :global(.react-datepicker__month) {
+    @apply m-0;
+  }
+
+  :global(.react-datepicker__year) {
+    @apply m-0;
+  }
+
+  :global(.react-datepicker__year-wrapper) {
+    @apply max-w-[100%] my-0 ml-[24px] mr-[25px];
+  }
+
+  :global(.react-datepicker__year-text) {
+    @apply flex items-center justify-center w-[61px] h-[24px] mb-[24px];
+  }
+
+  :global(.react-datepicker__header) {
+    @apply mt-[9px]
+    mb-[11px]
+    mx-[12px] 
+    bg-transparent
+    border-b-0;
+  }
+
+  :global(.react-datepicker__day-name),
+  :global(.react-datepicker__day) {
+    @apply w-[36px] 
+      text-[#fff] 
+      mx-[3px]
+      first-of-type:ml-0
+      last-of-type:mr-0
+      bg-transparent;
+  }
+
+  :global(.react-datepicker__day-name) {
+    @apply leading-[13px] text-[11px];
+  }
+
+  :global(.react-datepicker__day) {
+    @apply w-[36px] h-[36px] text-[14px];
+
+    &:global(.react-datepicker__day--selected) {
+      @apply rounded-[50%];
+    }
+  }
+
+  .pastDate {
+    @apply text-[#828282];
+  }
+}
+
+.header {
+  .magicText {
+    @apply font-normal
+      left-0 
+      mb-[4px]
+      text-[16px] 
+      leading-[24px];
+  }
+
+  .currMonth {
+    @apply font-bold
+    text-[32px] 
+    leading-[44px];
+  }
+
+  .row {
+    @apply flex 
+    flex-row
+    justify-between
+    items-center
+    mt-[24px] 
+    mb-[23px];
+  }
+}
+
+.day {
+  @apply flex 
+    items-center 
+    justify-center 
+    w-[100%] 
+    h-[100%]
+    border-[1px]
+    border-transparent
+    rounded-[50%];
+
+  &.new {
+    @apply border-[#00A3FF] bg-[#00A3FF];
+  }
+
+  &.old {
+    @apply border-[#00A3FF] bg-transparent;
+  }
+
+  &:hover {
+    @apply bg-white text-black;
+  }
+}
