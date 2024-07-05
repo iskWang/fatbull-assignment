@@ -55,7 +55,10 @@ const CustomDatePicker = () => {
         value={(tempDate && format(tempDate, DATE_FORMAT)) || ""}
         onFocus={() => {
           setIsFocused(true);
-          setCurrDate(new Date());
+
+          if (!currDate) {
+            setCurrDate(new Date());
+          }
         }}
       />
       <div
